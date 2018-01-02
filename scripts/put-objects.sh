@@ -27,7 +27,7 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
     #curl -s -f -XPUT -d@/kibana-template.json "${ELASTICSEARCH_URL}/_template/kibana"
 
     type="_template"
-    typefolder="kibana-objects/${type}"
+    typefolder="/kibana-objects/${type}"
 
     # Submit templates _template
     echo "Processing type $type"
@@ -54,7 +54,7 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
 
     for type in "${arr[@]}"
     do
-      typefolder="kibana-objects/${type}"
+      typefolder="/kibana-objects/${type}"
 
       echo "Processing type $type"
       for fullfile in $typefolder/*.json; do
