@@ -44,7 +44,7 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
     # Submit rest of the objects
     # i.e the type folders in `objects` other than previous type `_template`
 
-    # order needed? 
+    # TODO: order needed? 
     declare -a arr=("index-pattern" "search" "visualization" "dashboard")
     # objects_except_template=$(ls | grep -v ${type} | tr '\n' ' ')
     # IFS_BACKUP=IFS;
