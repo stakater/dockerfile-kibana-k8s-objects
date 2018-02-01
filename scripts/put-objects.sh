@@ -69,4 +69,4 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
     done
 fi
 
-sleep infinity
+tail -f /dev/null
