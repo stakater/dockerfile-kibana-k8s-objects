@@ -37,7 +37,7 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
 
       if [ "$name" != "*" ]; then
         echo "Processing file $fullfile with name: $name"
-        curl -vvv -H "Content-Type: application/json" -s -f -XPUT -d@/${fullfile} "${ELASTICSEARCH_URL}/${type}/${name}"
+        curl -vvv -H "Content-Type: application/json" -XPUT -d@/${fullfile} "${ELASTICSEARCH_URL}/${type}/${name}?pretty"
       fi
     done
 
@@ -63,7 +63,7 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
 
         if [ "$name" != "*" ]; then
           echo "Processing file $fullfile with name: $name"
-          curl -vvv -H "Content-Type: application/json" -s -f -XPUT -d@/${fullfile} "${ELASTICSEARCH_URL}/.kibana/${type}/${name}"
+          curl -vvv -H "Content-Type: application/json" -XPUT -d@/${fullfile} "${ELASTICSEARCH_URL}/.kibana/${type}/${name}?pretty"
         fi
       done
     done
