@@ -1,0 +1,15 @@
+{
+    "title": "Kubernetes Logs Overview",
+    "hits": 0,
+    "description": "",
+    "panelsJSON": "[{\"id\":\"Log-entries-per-namespace\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":1},{\"col\":4,\"id\":\"Log-entries-per-bucket\",\"panelIndex\":2,\"row\":1,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"columns\":[\"kubernetes.pod_name\",\"log\"],\"id\":\"All-logs\",\"panelIndex\":3,\"row\":4,\"size_x\":9,\"size_y\":8,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"}, {\"id\": \"Log-entries-per-app\", \"type\": \"visualization\", \"panelIndex\": 4, \"size_x\": 3, \"size_y\": 2, \"col\": 1, \"row\": 4}, {\"id\": \"Log-entries-per-pod\", \"type\": \"visualization\", \"panelIndex\": 5, \"size_x\": 3, \"size_y\": 2, \"col\": 1, \"row\": 5},{\"id\": \"Log-entries-per-container\", \"type\": \"visualization\", \"panelIndex\": 6, \"size_x\": 3, \"size_y\": 2, \"col\": 1, \"row\": 6}, {\"id\": \"Log-entries-per-node\", \"type\": \"visualization\", \"panelIndex\": 7, \"size_x\": 3, \"size_y\": 2, \"col\": 1, \"row\":7}]",
+    "optionsJSON": "{\"darkTheme\":false}",
+    "uiStateJSON": "{}",
+    "version": 1,
+    "timeRestore": true,
+    "timeTo": "now",
+    "timeFrom": "now-30m",
+    "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+    }
+}
