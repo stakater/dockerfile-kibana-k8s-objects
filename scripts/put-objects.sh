@@ -23,6 +23,9 @@ until $(curl -s -f -o /dev/null --connect-timeout 1 -m 1 --head ${ELASTICSEARCH_
     fi
 done
 
+# Delete .kibana index if it exists
+curl -X DELETE ${ELASTICSEARCH_URL}/.kibana?pretty
+
 if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
     #curl -s -f -XPUT -d@/kibana-template.json "${ELASTICSEARCH_URL}/_template/kibana"
 
@@ -37,7 +40,7 @@ if ! [ $(curl -s -f -o /dev/null ${ELASTICSEARCH_URL}/.kibana) ]; then
 
       if [ "$name" != "*" ]; then
         echo "Processing file $fullfile with name: $name"
-        # curl -vvv -H "Content-Type: application/json" -XPUT -d@/${fullfile} "${ELASTICSEARCH_URL}/${type}/${name}?pretty"
+        curl -vvv -H "Content-Type: application/json" -XPUT -d@/${fullfile} "${ELASTICSEARCH_URL}/${type}/${name}?pretty"
       fi
     done
 
